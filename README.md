@@ -6,7 +6,7 @@ A complete end-to-end pipeline for detecting anomalies—such as leaks or mechan
 * **Audio Preprocessing**: Recursive processing of `.wav` files into compressed `.npz` spectrograms with configurable sampling rates, segmentation, and normalization.
 * **AnoGAN Architecture**: A robust PyTorch implementation of DCGAN (Generator and Discriminator) optimized for learning complex audio distributions.
 * **Multi-Component Scoring**: Flexibility to calculate anomaly scores using **Residual Loss** (L1 distance in image space), **Feature Loss** (discrepancies in discriminator feature maps), or a weighted combination of both.
-* **Robustness Testing**: Integrated **SNR (Signal-to-Noise Ratio)** testing suite to evaluate model reliability under varying levels of environmental Gaussian noise.
+* **Robustness Testing**: Integrated SNR testing suite to evaluate model reliability under varying levels of environmental Gaussian noise.
 * **Insightful Visualization**: Automatically generates triplet plots (**Original | Reconstruction | Residual**) to pinpoint exactly where anomalies occur within the frequency spectrum.
 * **Comprehensive Logging**: Full integration with CSV, JSON, TensorBoard, and **Weights & Biases (WandB)** for professional-grade experiment tracking.
 
