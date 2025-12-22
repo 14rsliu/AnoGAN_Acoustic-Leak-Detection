@@ -19,10 +19,3 @@ A complete end-to-end pipeline for detecting anomalies (e.g., leaks, mechanical 
 ## 📂 Project Structure
 * `folder2STFT.py`: Preprocessing utility that reads WAV files, handles resampling, segments the signal, and computes STFT magnitude in Decibels (dB).
 * `main_singleRun.py`: The core engine containing the DCGAN models, training loops, latent space optimization (inverse mapping), and evaluation suites.
-
-## ⚙️ Configuration & Usage
-
-### 1. Preprocessing
-Use `folder2STFT.py` to prepare your dataset. It mirrors your directory structure and saves segments as compressed `.npz` files.
-```bash
-python folder2STFT.py --input_dir ./raw_data --output_dir ./processed_data --fs 4096 --seg_sec 10.0
