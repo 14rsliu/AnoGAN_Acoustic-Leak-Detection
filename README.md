@@ -1,6 +1,6 @@
 # Acoustic Leak Detection in Water Distribution Networks
 
-A complete end-to-end pipeline for detecting anomalies—such as leaks or mechanical failures—in audio signals from **water distribution networks**. This project utilizes Short-Time Fourier Transform (STFT) for preprocessing and a Deep Convolutional GAN (DCGAN) architecture to learn the "normal" state of acoustic environments, identifying deviations through latent space optimization (Inverse Mapping).
+A complete program for detecting anomalies, for example leaks in audio signals from **water distribution networks**. This project utilizes Short-Time Fourier Transform (STFT) for preprocessing and a Deep Convolutional GAN (DCGAN) architecture to learn the "normal" state of acoustic environments, identifying deviations through latent space optimization (Inverse Mapping).
 
 ## 🚀 Features
 * **Audio Preprocessing**: Recursive processing of `.wav` files into compressed `.npz` spectrograms with configurable sampling rates, segmentation, and normalization.
