@@ -1,14 +1,14 @@
 # Audio Anomaly Detection via AnoGAN
 
-A complete end-to-end pipeline for detecting anomalies (e.g., leaks, mechanical failures) in audio signals. This project uses Short-Time Fourier Transform (STFT) for preprocessing and a Deep Convolutional GAN (DCGAN) architecture to learn the "normal" state of audio, identifying anomalies through latent space optimization (Inverse Mapping).
+A complete end-to-end pipeline for detecting anomalies—such as leaks or mechanical failures—in audio signals from **water distribution networks**. This project utilizes Short-Time Fourier Transform (STFT) for preprocessing and a Deep Convolutional GAN (DCGAN) architecture to learn the "normal" state of acoustic environments, identifying deviations through latent space optimization (Inverse Mapping).
 
 ## 🚀 Features
-* **Audio Preprocessing**: Recursive folder processing of `.wav` files into compressed `.npz` spectrograms with custom sampling rates and segment lengths.
-* **AnoGAN Architecture**: PyTorch implementation of DCGAN (Generator and Discriminator) for learning normal audio distributions.
-* **Anomaly Scoring**: Multi-component scoring using **Residual Loss** (L1 distance), **Feature Loss** (intermediate discriminator features), or a combination of both.
-* **Robustness Testing**: Built-in **SNR (Signal-to-Noise Ratio)** testing mode to evaluate model performance under varying Gaussian noise conditions.
-* **Visualization**: Generates triplet plots (**Original | Reconstruction | Residual**) to visualize exactly where anomalies are detected in the spectrogram.
-* **Advanced Logging**: Full support for CSV, JSON, TensorBoard, and **Weights & Biases (WandB)** for experiment tracking.
+* **Audio Preprocessing**: Recursive processing of `.wav` files into compressed `.npz` spectrograms with configurable sampling rates, segmentation, and normalization.
+* **AnoGAN Architecture**: A robust PyTorch implementation of DCGAN (Generator and Discriminator) optimized for learning complex audio distributions.
+* **Multi-Component Scoring**: Flexibility to calculate anomaly scores using **Residual Loss** (L1 distance in image space), **Feature Loss** (discrepancies in discriminator feature maps), or a weighted combination of both.
+* **Robustness Testing**: Integrated **SNR (Signal-to-Noise Ratio)** testing suite to evaluate model reliability under varying levels of environmental Gaussian noise.
+* **Insightful Visualization**: Automatically generates triplet plots (**Original | Reconstruction | Residual**) to pinpoint exactly where anomalies occur within the frequency spectrum.
+* **Comprehensive Logging**: Full integration with CSV, JSON, TensorBoard, and **Weights & Biases (WandB)** for professional-grade experiment tracking.
 
 ## 🛠 Tech Stack
 * **Core**: Python 3.8+, PyTorch
@@ -17,5 +17,5 @@ A complete end-to-end pipeline for detecting anomalies (e.g., leaks, mechanical 
 * **Experiment Tracking**: WandB, TensorBoard
 
 ## 📂 Project Structure
-* `folder2STFT.py`: Preprocessing utility that reads WAV files, handles resampling, segments the signal, and computes STFT magnitude in Decibels (dB).
-* `main_singleRun.py`: The core engine containing the DCGAN models, training loops, latent space optimization (inverse mapping), and evaluation suites.
+* `folder2STFT.py`: A high-performance preprocessing utility that handles resampling, signal segmentation, and STFT magnitude computation in Decibels (dB).
+* `main_singleRun.py`: The central execution engine containing the GAN architecture, training loops, latent space "inverse mapping" logic, and the evaluation suite.
