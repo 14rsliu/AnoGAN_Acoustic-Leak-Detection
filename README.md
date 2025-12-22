@@ -1,20 +1,28 @@
-Audio Anomaly Detection via AnoGAN
+# Audio Anomaly Detection via AnoGAN
+
 A complete end-to-end pipeline for detecting anomalies (e.g., leaks, mechanical failures) in audio signals. This project uses Short-Time Fourier Transform (STFT) for preprocessing and a Deep Convolutional GAN (DCGAN) architecture to learn the "normal" state of audio, identifying anomalies through latent space optimization (Inverse Mapping).
 
-🚀 Features
-Audio Preprocessing: Recursive folder processing of .wav files into compressed .npz spectrograms.
-AnoGAN Architecture: PyTorch implementation of DCGAN for learning normal audio distributions.
-Anomaly Scoring: Multi-component scoring using Residual Loss.
-Robustness Testing: Built-in SNR (Signal-to-Noise Ratio) testing mode to evaluate model performance under varying noise conditions.
-Visualization: Generates triplet plots (Original | Reconstruction | Residual) to visualize where anomalies are detected.
-Advanced Logging: Supports CSV, JSON, TensorBoard, and Weights & Biases (WandB).
+## 🚀 Features
+* **Audio Preprocessing**: Recursive folder processing of `.wav` files into compressed `.npz` spectrograms with custom sampling rates and segment lengths.
+* **AnoGAN Architecture**: PyTorch implementation of DCGAN (Generator and Discriminator) for learning normal audio distributions.
+* **Anomaly Scoring**: Multi-component scoring using **Residual Loss** (L1 distance), **Feature Loss** (intermediate discriminator features), or a combination of both.
+* **Robustness Testing**: Built-in **SNR (Signal-to-Noise Ratio)** testing mode to evaluate model performance under varying Gaussian noise conditions.
+* **Visualization**: Generates triplet plots (**Original | Reconstruction | Residual**) to visualize exactly where anomalies are detected in the spectrogram.
+* **Advanced Logging**: Full support for CSV, JSON, TensorBoard, and **Weights & Biases (WandB)** for experiment tracking.
 
-🛠 Tech Stack
-Core: Python 3.8+, PyTorch
-Signal Processing: SciPy, NumPy
-Visualization: Matplotlib
-Experiment Tracking: WandB, TensorBoard
+## 🛠 Tech Stack
+* **Core**: Python 3.8+, PyTorch
+* **Signal Processing**: SciPy, NumPy
+* **Visualization**: Matplotlib
+* **Experiment Tracking**: WandB, TensorBoard
 
-📂 Project Structure
-folder2STFT.py: Preprocessing utility to convert raw audio into spectrogram segments.
-main_singleRun.py: The core engine for training, evaluation, and robustness testing.
+## 📂 Project Structure
+* `folder2STFT.py`: Preprocessing utility that reads WAV files, handles resampling, segments the signal, and computes STFT magnitude in Decibels (dB).
+* `main_singleRun.py`: The core engine containing the DCGAN models, training loops, latent space optimization (inverse mapping), and evaluation suites.
+
+## ⚙️ Configuration & Usage
+
+### 1. Preprocessing
+Use `folder2STFT.py` to prepare your dataset. It mirrors your directory structure and saves segments as compressed `.npz` files.
+```bash
+python folder2STFT.py --input_dir ./raw_data --output_dir ./processed_data --fs 4096 --seg_sec 10.0
