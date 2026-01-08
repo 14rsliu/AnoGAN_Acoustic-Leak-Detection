@@ -8,13 +8,11 @@ A complete program for detecting leaks in audio signals from **water distributio
 * **Multi-Component Scoring**: Flexibility to calculate anomaly scores using **Residual Loss** (L1 distance in image space), **Feature Loss** (discrepancies in discriminator feature maps), or a weighted combination of both.
 * **Robustness Testing**: Integrated SNR testing suite to evaluate model reliability under varying levels of environmental Gaussian noise.
 * **Insightful Visualization**: Automatically generates triplet plots (**Original | Reconstruction | Residual**) to pinpoint exactly where anomalies occur within the frequency spectrum.
-* **Comprehensive Logging**: Full integration with CSV, JSON, TensorBoard, and **Weights & Biases (WandB)** for professional-grade experiment tracking.
 
 ## 🛠 Tech Stack
 * **Core**: Python 3.8+, PyTorch
 * **Signal Processing**: SciPy, NumPy
 * **Visualization**: Matplotlib
-* **Experiment Tracking**: WandB, TensorBoard
 
 ## 📂 Project Structure
 * `folder2STFT.py`: A high-performance preprocessing utility that handles resampling, signal segmentation, and STFT magnitude computation in Decibels (dB).
