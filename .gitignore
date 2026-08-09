@@ -1,0 +1,50 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+._*
+.venv/
+venv/
+.idea/
+.vscode/
+.pytest_cache/
+tests/
+
+# Data and experiment artifacts
+data/
+datasets/
+raw/
+processed/
+outputs/
+runs/
+wandb/
+logs/
+
+# Weights, checkpoints, and exported models
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Acoustic and spectrogram data
+*.wav
+*.flac
+*.mp3
+*.npz
+*.npy
+
+# Manuscript and result files
+*.pdf
+*.docx
+*.xlsx
+*.pptx
+*.csv
+*.json
+*.log
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.html
+*.tif
+*.tiff
+*.bmp
